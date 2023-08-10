@@ -6,7 +6,7 @@ import torch
 from d2go.config import CfgNode as CN
 from detectron2.utils.file_io import PathManager
 from mobile_cv.torch.utils_pytorch import comm
-from torch.cuda._memory_viz import segment_plot, trace_plot
+from torch.cuda._memory_viz import trace_plot
 
 logger: logging.Logger = logging.getLogger(__name__)
 
@@ -80,8 +80,6 @@ def dump_snapshot(save_dir: str, snapshot):
         pickle.dump(snapshot, f)
     with PathManager.open(os.path.join(save_dir, "trace_plot.html"), "w") as f:
         f.write(trace_plot(snapshot))
-    with PathManager.open(os.path.join(save_dir, "segment_plot.html"), "w") as f:
-        f.write(segment_plot(snapshot))
     logger.info(f"Saved memory snapshot to {save_dir}")
 
 
