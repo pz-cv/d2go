@@ -1,5 +1,9 @@
 # D2Go
 
+This is a fork of the official [d2go](https://github.com/facebookresearch/d2go) repository. I revised the code to make it more suitable for integrating with other projects in a pipeline.
+
+------
+
 D2Go is a production ready software system from FacebookResearch, which supports end-to-end model training and deployment for mobile platforms.
 
 ## What's D2Go
